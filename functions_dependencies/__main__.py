@@ -22,7 +22,15 @@ def main():
     except SystemExit as e:
         print("Logging: Exit the program. As a testing.")
         #return { 'message' : 'Returned: Exit the program. As a testing.'}
-    return { 'message' : 'python implemention finished'}
+    # return { 'message' : 'python implemention finished'}
 
-
+    name = params.get("name", "world")
+    greeting = "Hello " + name + "!"
+    return {
+            "headers": {
+                "Content-Type": "application/json",
+            },
+            "statusCode": response.status,
+            "body": greeting
+    }
 
