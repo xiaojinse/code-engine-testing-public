@@ -11,17 +11,18 @@ from datetime import datetime, timedelta, timezone
 import re
 
 
-
 def main():
-    print("helen-testing-function-123")
-    name = params.get("name", "world")
-    greeting = "Hello " + name + "!"
+    print("helen-testing-functions-456")
     
-    return {
-        "headers": {
-            "Content-Type": "application/json",
-        },
-        "statusCode": 200,
-        "body": greeting,
-    }
+    try:
+        read_xlsx_inst = Readxlsx(dict)
+        file_list = read_xlsx_inst.get_file_list()
+        read_xlsx_inst.exec_file_list(file_list)
+        print("Finished the program.")
+    except SystemExit as e:
+        print("Logging: Exit the program. As a testing.")
+        #return { 'message' : 'Returned: Exit the program. As a testing.'}
+    return { 'message' : 'python implemention finished'}
+
+
 
