@@ -30,7 +30,7 @@ def main():
             "headers": {
                 "Content-Type": "application/json",
             },
-            "statusCode": response.status,
+            "statusCode": 200,
             "body": greeting
     }
 
